@@ -1,0 +1,114 @@
+body{
+    background-color:mistyrose;
+}
+header h1{
+    color:snow;
+    font-family: tahoma;
+    font-size: 4vw;
+    text-align: center;
+    
+    
+}
+
+header{
+    background-color:LightPink ;
+    text-align: center;
+    height: 5vw;
+   
+   
+    
+}
+
+header img{
+    width:9vw;
+    border-radius: 10px;
+    float:left;    
+}
+
+nav{
+    background-color:Lavender;
+    padding: 1vw;
+    text-align: center;
+}
+
+nav a{
+   padding: 1vw; 
+   text-decoration: none;
+   color:#3498DB;
+   
+}
+
+nav a:hover{
+    color: #906192;
+    background-color: #FEE9FF;
+}
+
+section iframe{
+    width: 100%;
+    height: 500px;
+    border:0;
+}
+
+/* Formatação para computador */
+header{
+    height:100px
+}
+
+header h1{
+    color:blue;
+    font-family:tahoma;
+    font-size:4vw;
+    text-align:center
+}
+
+header img{
+    width:10vw;
+    border-radius: 10px;
+    float:left
+}
+
+nav {
+    background-color: #DFDFD8;
+    padding: 1vw;
+}
+
+nav a{
+   padding: 1vw;
+   text-decoration: none;
+   color:black;
+}
+
+nav a:hover {
+    color:darkgrey;
+    background-color:black 
+}
+
+section iframe{
+    width:100%;
+    height:500px;
+    border:0
+}
+
+/* Configuração para tablet */
+@media only screen and (max-width: 900px) {
+    
+    
+}
+
+/* Configuração para celular */
+@media only screen and (max-width: 600px) {
+  nav a{
+   display:block
+  }
+  
+   nav a:hover {
+    color:blue;
+    background-color:white 
+   }
+   
+   header{
+    height:30px
+   }
+   
+}    
+
