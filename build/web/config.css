@@ -1,3 +1,22 @@
+/* configuração do submenu */ 
+
+div.submenu{
+    display:none
+}
+
+nav a, div.menu{
+    float:left
+}
+
+div.menu:hover div.submenu, div.submenu a{
+    display:block;
+    float:none
+}
+
+div.submenu a{
+    float:none;
+}
+
 body{
     background-color:mistyrose;
 }
@@ -25,10 +44,10 @@ header img{
     float:left;    
 }
 
-nav{
-    background-color:Lavender;
+nav {
+    background-color: #DFDFD8;
     padding: 1vw;
-    text-align: center;
+    height: 40px
 }
 
 nav a{
