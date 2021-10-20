@@ -8,6 +8,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" type="text/css" href="config.css">
         <title>JSP Page</title>
     </head>
     <body>
@@ -29,11 +30,16 @@
                st.setString(1, codigo);
                rs = st.executeQuery();
                
+               
                //Se encontrou o cliente
                if(rs.next()){
-                    out.print("Nome: " + rs.getString("nome") + "<br>");
-                    out.print("Endereço: " + rs.getString("endereco") + "<br>");
-                    out.print("Renda: " + rs.getString("renda")  + "<br>");
+                   out.print("<table border='1'>");
+                   out.print("<tr><th>Nome</th><th>Endereço</th><th>Renda</th></tr>");
+                     out.print("<tr>");
+                        out.print("<td>" +rs.getString("nome") + "</td>");
+                        out.print("<td>" +rs.getString("endereco") + "</td>");
+                        out.print("<td>" +rs.getString("renda")  + "</td>");
+                    out.print("</tr>");
                }else{ //se não encontrou
                     out.print("Este cliente não está cadastrado");
                }

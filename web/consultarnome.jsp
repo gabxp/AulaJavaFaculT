@@ -13,36 +13,34 @@
     </head>
     <body>
         <%
-            String codigo;
+            String nome;
             Connection con;
             PreparedStatement st;
             ResultSet rs;
             
-            //Recebe o código do formulário con_cli.html
-            codigo = request.getParameter("codigo");
+            //Recebe o código do formulário connome.html
+            nome = request.getParameter("nome");
 
             try{
                //Conecta com o banco de dados
                Class.forName("com.mysql.jdbc.Driver");
                con =  DriverManager.getConnection("jdbc:mysql://localhost:3306/bancoclientes","root","nagito");
             //Executando o comando SELECT
-                st = con.prepareStatement("SELECT * FROM CLIENTE WHERE CODIGO=?");
-               st.setString(1, codigo);
+               st = con.prepareStatement("SELECT * FROM CLIENTE WHERE NOME LIKE ?");
+               st.setString(1, "%" + nome + "%");
                rs = st.executeQuery();
                
-               
-               //Se encontrou o cliente
-               if(rs.next()){
-                   out.print("<table border='1'>");
-                   out.print("<tr><th>Nome</th><th>Endereço</th><th>Renda</th></tr>");
-                     out.print("<tr>");
+               out.print("<table border='1'>");
+               out.print("<tr><th>Código</th><th>Nome</th><th>Endereço</th><th>Renda</th></tr>");
+               while (rs.next()){ //Se encontrou o nome do cliente
+                    out.print("<tr>");
+                        out.print("<td>" + rs.getString("codigo") + "</td>");
                         out.print("<td>" +rs.getString("nome") + "</td>");
                         out.print("<td>" +rs.getString("endereco") + "</td>");
                         out.print("<td>" +rs.getString("renda")  + "</td>");
                     out.print("</tr>");
-               }else{ //se não encontrou
-                    out.print("Este cliente não está cadastrado");
                }
+               
             }catch (ClassNotFoundException ex){
                 out.print("Driver de conexão não encontrado " + ex.getMessage());
             }catch (SQLException ex){
