@@ -31,13 +31,14 @@
                rs = st.executeQuery();
                
                out.print("<table border='1'>");
-               out.print("<tr><th>Código</th><th>Nome</th><th>Endereço</th><th>Renda</th></tr>");
+               out.print("<tr><th>Código</th><th>Nome</th><th>Endereço</th><th>Renda</th><th>Exclusão</th></tr>");
                while (rs.next()){ //Se encontrou o nome do cliente
                     out.print("<tr>");
                         out.print("<td>" + rs.getString("codigo") + "</td>");
                         out.print("<td>" +rs.getString("nome") + "</td>");
                         out.print("<td>" +rs.getString("endereco") + "</td>");
                         out.print("<td>" +rs.getString("renda")  + "</td>");
+                        out.print("<td><a href='excluir.jsp?codigo=" + rs.getString("codigo") + "'>Excluir</a></td>");     
                     out.print("</tr>");
                }
                
